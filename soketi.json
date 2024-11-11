@@ -1,0 +1,30 @@
+{
+  "debug": true,
+  "port": 6001,
+  "appManager.array.apps": [
+    {
+      "id": "soketi",
+      "key": "soketi",
+      "secret": "soketi",
+      "enabled": true,
+      "enableClientMessages": false,
+      "webhooks": [
+        {
+          "url": "http://host.docker.internal:3000/api/pusher/webhook",
+          "event_types": ["member_added", "member_removed"]
+        }
+      ],
+      "maxBackendEventsPerSecond": -1,
+      "maxClientEventsPerSecond": -1,
+      "maxReadRequestsPerSecond": -1,
+      "maxPresenceMembersPerChannel": 100,
+      "maxPresenceMemberSizeInKb": 2,
+      "maxChannelNameLength": 200,
+      "maxEventChannelsAtOnce": 10,
+      "maxEventNameLength": 100,
+      "maxEventPayloadInKb": 4,
+      "maxEventBatchSize": 10,
+      "enableUserAuthentication": true
+    }
+  ]
+}
